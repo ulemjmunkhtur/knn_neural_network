@@ -1,6 +1,3 @@
-# knn_neural_network
-## README
-
 # **Project Purpose**
 
 The purpose of this project is to explore the potential of using a neural network inspired by the K-Nearest Neighbors (KNN) algorithm and the KMeans clustering algorithm. We aim to investigate whether we can draw inspiration from these traditional methods and possibly improve them using different settings and configurations. By employing the `make_blobs` and `make_moons` datasets, we evaluate our approach initially on a fixed dataset and subsequently on a variable dataset.
@@ -23,7 +20,7 @@ In this project, we draw inspiration from the KMeans algorithm, specifically its
 class sklearn.cluster.KMeans(n_clusters=2, *, init="random", n_init=1, max_iter=10, tol=0.0001, verbose=0, random_state=None, copy_x=True, algorithm='lloyd')
 ```
 
-### **Initializations
+### **Initializations**
 
 1. Run Forward
    The "run forward" initialization involves running a forward pass through a randomly initialized neural network to generate initial labels. This approach leverages the network's initial random weights to create a preliminary clustering, which is refined through subsequent iterations.
@@ -37,12 +34,12 @@ class sklearn.cluster.KMeans(n_clusters=2, *, init="random", n_init=1, max_iter=
 ### Samples
 The samples are used based on the following assumptions:
 
-**Idea 1 (Setting use_samples to True)
+**Idea 1** (Setting use_samples to True)
 1. Two clusters are labeled (one of them as 1).
 2. Sample points are generated based on the mean of the two clusters, adding more points around the mean.
 3. The nearest neighbor logic is used to determine similarity from the ones labeled as 1, to get a labeling for the samples based on the average distance to the nearest k points.
 
-**Idea 2 (Setting use_samples to False)
+**Idea 2** (Setting use_samples to False)
 1. Two clusters are labeled (one of them as 1).
 2. The other cluster is used with nearest neighbor logic to determine the similarity from the ones labeled as 1 to get the similarity.
 3. The 2nd cluster is then labeled as 1, and the same process is repeated with the other sample.
@@ -112,18 +109,12 @@ Running these experiments will generate results and save them as CSV files in th
 ### File Structure
 This repository contains the following files and directories:
 
-exp_results/: Directory containing the results of the experiments.
+**exp_results/: Directory containing the results of the experiments.**
+- blobs_fixed_dataset.csv: Experiment 1: Results of the fixed dataset using make_blobs.
+- blobs_variable_dataset.csv: Experiment 2: Results of the variable dataset using make_blobs.
+- moons_fixed_dataset_exp.csv: Experiment 3: Results of the fixed dataset using make_moons.
+- moons_variable_dataset_exp.csv: Experiment 4: Results of the variable dataset using make_moons.
 
-blobs_fixed_dataset.csv: Results of the fixed dataset using make_blobs.
-blobs_variable_dataset.csv: Results of the variable dataset using make_blobs.
-moons_fixed_dataset_exp.csv: Results of the fixed dataset using make_moons.
-moons_variable_dataset_exp.csv: Results of the variable dataset using make_moons.
-plots/: Directory intended for storing plots generated from the analysis.
-
-knn_experiment.py: This script contains the main experiment code for running different initialization methods, sample configurations, and mixup strategies.
-
-README.md: This file. It explains the purpose of the project, the experimental setup, and how to run the code.
-
-requirements.txt: This file lists all the Python dependencies required to run the project. Install them using the command pip install -r requirements.txt.
-
-test_significance.py: This script performs ANOVA and regression analysis on the experiment results to determine the significance and impact of different configurations.
+**knn_experiment.py**: This script contains the main experiment code for running different initialization methods, sample configurations, and mixup strategies.
+**requirements.txt**: This file lists all the Python dependencies required to run the project. Install them using the command pip install -r requirements.txt.
+**test_significance.py**: This script performs ANOVA and regression analysis on the experiment results to determine the significance and impact of different configurations.
