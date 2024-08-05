@@ -8,13 +8,13 @@ The purpose of this project is to explore the potential of using a neural networ
    
    ![Make Blobs](images/make_blobs_initialization.png)
    
-2. **Make Moons**: This dataset creates two interleaving half circles, which are more challenging for traditional clustering algorithms like KMeans.
+2. **Make Moons**: This dataset creates two interleaving half circles (more challenging for KMeans)
    
    ![Make Moons](images/make_moons_initialization.png)
 
 ### **KMeans Comparison**
 
-In this project, we draw inspiration from the KMeans algorithm, specifically its initialization and clustering logic. The KMeans algorithm can be instantiated with various parameters as shown below:
+The KMeans algorithm can be instantiated with various parameters as shown below:
 
 ```python
 class sklearn.cluster.KMeans(n_clusters=2, *, init="random", n_init=1, max_iter=10, tol=0.0001, verbose=0, random_state=None, copy_x=True, algorithm='lloyd')
@@ -67,7 +67,7 @@ pip install -r requirements.txt
 ```
 
 Running the Experiments
-The following experiments are conducted using different initialization methods, use of samples, mixup augmentation, and k ratios. To run the experiments, execute the following code:
+The following experiments are conducted using different initialization methods, use of samples, mixup augmentation, and k ratios. To run the experiments, execute the following code that can be found in the knn_experiments.py file:
 ```
 python
 # Experiment #1 -- fixed dataset, make blobs
@@ -116,6 +116,6 @@ This repository contains the following files and directories:
 - moons_fixed_dataset_exp.csv: Experiment 3: Results of the fixed dataset using make_moons.
 - moons_variable_dataset_exp.csv: Experiment 4: Results of the variable dataset using make_moons.
 
-**knn_experiment.py**: This script contains the main experiment code for running different initialization methods, sample configurations, and mixup strategies.
+**knn_experiment.py**: main experiment code for running different initialization methods, sample configurations, and mixup strategies.
 **requirements.txt**: This file lists all the Python dependencies required to run the project. Install them using the command pip install -r requirements.txt.
-**test_significance.py**: This script performs ANOVA and regression analysis on the experiment results to determine the significance and impact of different configurations.
+**test_significance.py**:  performs ANOVA and regression analysis on the experiment results to determine the significance and impact of different configurations.
