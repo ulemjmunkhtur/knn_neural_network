@@ -49,8 +49,9 @@ Mixup is a domain-agnostic data augmentation technique proposed by Zhang et al. 
 
 ```python
 
-mixed*x = λ * x1 + (1 - λ) _ x2
-mixed_y = λ _ y1 + (1 - λ) \_ y2
+lam = np.random.rand()
+mixed_x = lam * x1 + (1 - lam) * x2
+mixed_y = lam * y1 + (1 - lam) * y2
 ```
 where λ is a mixing parameter sampled from a beta distribution. This technique can improve the robustness and generalization of the model. You can set use_mixup to True or False to enable or disable mixup augmentation.
 
